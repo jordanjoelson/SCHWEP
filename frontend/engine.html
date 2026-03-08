@@ -318,9 +318,9 @@
       }
 
       /* ════════════════════════════════════
-   DNA AXIS BAR
+   BLUEPRINT ALIGNMENT BAR
 ════════════════════════════════════ */
-      .dna-bar-wrap {
+      .blueprint-bar-wrap {
         grid-area: left;
         background: var(--white);
         border-radius: 14px;
@@ -335,12 +335,12 @@
         pointer-events: none;
         transition: opacity 0.4s ease;
       }
-      .dna-bar-wrap.visible {
+      .blueprint-bar-wrap.visible {
         opacity: 1;
         pointer-events: auto;
         animation: none; /* no slide-in needed now */
       }
-      .dna-bar-sub {
+      .blueprint-bar-sub {
         font-family: 'DM Mono', monospace;
         font-size: 0.5rem;
         letter-spacing: 0.05em;
@@ -348,7 +348,7 @@
         margin-bottom: 8px;
         line-height: 1.4;
       }
-      .dna-bar-label {
+      .blueprint-bar-label {
         font-family: 'DM Mono', monospace;
         font-size: 0.55rem;
         letter-spacing: 0.15em;
@@ -359,20 +359,20 @@
         justify-content: space-between;
         align-items: center;
       }
-      .dna-bar-label span {
+      .blueprint-bar-label span {
         color: var(--orange);
       }
-      .dna-axes {
+      .blueprint-axes {
         display: flex;
         flex-direction: column;
         gap: 5px;
       }
-      .dna-axis-row {
+      .blueprint-axis-row {
         display: flex;
         align-items: center;
         gap: 8px;
       }
-      .dna-axis-name {
+      .blueprint-axis-name {
         font-size: 9px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -381,20 +381,20 @@
         flex-shrink: 0;
         text-align: right;
       }
-      .dna-axis-track {
+      .blueprint-axis-track {
         flex: 1;
         height: 3px;
         background: rgba(13, 13, 13, 0.07);
         border-radius: 99px;
         overflow: hidden;
       }
-      .dna-axis-fill {
+      .blueprint-axis-fill {
         height: 100%;
         border-radius: 99px;
         background: var(--orange);
         transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
-      .dna-axis-val {
+      .blueprint-axis-val {
         font-family: 'DM Mono', monospace;
         font-size: 9px;
         color: rgba(13, 13, 13, 0.25);
@@ -405,10 +405,10 @@
       }
 
       /* DNA bar wrap entrance animation */
-      .dna-bar-wrap.visible {
-        animation: dna-appear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      .blueprint-bar-wrap.visible {
+        animation: blueprint-appear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
       }
-      @keyframes dna-appear {
+      @keyframes blueprint-appear {
         from {
           opacity: 0;
           transform: translateY(-6px) scale(0.97);
@@ -420,7 +420,7 @@
       }
 
       /* ── Deck-reorder toast ── */
-      .dna-toast {
+      .blueprint-toast {
         position: fixed;
         bottom: 24px;
         left: 50%;
@@ -444,11 +444,11 @@
         align-items: center;
         gap: 7px;
       }
-      .dna-toast.show {
+      .blueprint-toast.show {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
       }
-      .dna-toast-dot {
+      .blueprint-toast-dot {
         width: 6px;
         height: 6px;
         border-radius: 50%;
@@ -733,7 +733,7 @@
         gap: 6px;
         flex-shrink: 0;
       }
-      .dna-badge {
+      .blueprint-badge {
         font-family: 'DM Mono', monospace;
         font-size: 12px;
         letter-spacing: 0.1em;
@@ -748,7 +748,7 @@
         align-items: center;
         gap: 5px;
       }
-      .dna-badge::before {
+      .blueprint-badge::before {
         content: '';
         width: 5px;
         height: 5px;
@@ -2029,17 +2029,17 @@
         color: rgba(13, 13, 13, 0.5);
       }
 
-      .dna-fp {
+      .blueprint-fp {
         display: flex;
         flex-direction: column;
         gap: 8px;
       }
-      .dna-fp-row {
+      .blueprint-fp-row {
         display: flex;
         align-items: center;
         gap: 10px;
       }
-      .dna-fp-label {
+      .blueprint-fp-label {
         font-size: 9px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -2048,19 +2048,19 @@
         flex-shrink: 0;
         text-align: right;
       }
-      .dna-fp-bar-bg {
+      .blueprint-fp-bar-bg {
         flex: 1;
         height: 6px;
         background: rgba(13, 13, 13, 0.07);
         border-radius: 99px;
         overflow: hidden;
       }
-      .dna-fp-bar-fill {
+      .blueprint-fp-bar-fill {
         height: 100%;
         border-radius: 99px;
         background: var(--orange);
       }
-      .dna-fp-num {
+      .blueprint-fp-num {
         font-family: 'DM Mono', monospace;
         font-size: 9px;
         color: rgba(13, 13, 13, 0.3);
@@ -2277,9 +2277,9 @@
   </head>
   <body>
     <div id="flash"></div>
-    <div class="dna-toast" id="dna-toast">
-      <div class="dna-toast-dot"></div>
-      <span id="dna-toast-msg">Deck reordered by DNA</span>
+    <div class="blueprint-toast" id="blueprint-toast">
+      <div class="blueprint-toast-dot"></div>
+      <span id="blueprint-toast-msg">Deck reordered by DNA</span>
     </div>
 
     <div class="app">
@@ -2317,22 +2317,22 @@
         </div>
       </div>
 
-      <!-- ══ DNA AXIS BAR ══ -->
-      <div class="dna-bar-wrap glass-panel" id="dna-bar-wrap">
+      <!-- ══ BLUEPRINT ALIGNMENT BAR ══ -->
+      <div class="blueprint-bar-wrap glass-panel" id="blueprint-bar-wrap">
         <div
           class="ctx-head"
           style="border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 4px"
         >
-          <div class="ctx-tag">Design DNA</div>
+          <div class="ctx-tag">Design Blueprint</div>
           <div class="ctx-title">Style Profile</div>
         </div>
         <div
-          class="dna-bar-sub"
-          id="dna-bar-sub"
+          class="blueprint-bar-sub"
+          id="blueprint-bar-sub"
         >
           building your profile...
         </div>
-        <div class="dna-axes" id="dna-axes"></div>
+        <div class="blueprint-axes" id="blueprint-axes"></div>
       </div>
 
       <!-- ══ SWIPE DECK ══ -->
@@ -2365,7 +2365,7 @@
                 </div>
               </div>
               <div class="card-right">
-                <div class="dna-badge" id="dna-badge" style="opacity: 0"></div>
+                <div class="blueprint-badge" id="blueprint-badge" style="opacity: 0"></div>
               </div>
             </div>
           </div>
@@ -2659,8 +2659,8 @@
 
       let _toastTimer = null;
       function showToast(msg) {
-        const toast = document.getElementById('dna-toast');
-        const msgEl = document.getElementById('dna-toast-msg');
+        const toast = document.getElementById('blueprint-toast');
+        const msgEl = document.getElementById('blueprint-toast-msg');
         if (!toast || !msgEl) return;
         msgEl.textContent = msg;
         toast.classList.add('show');
@@ -2672,12 +2672,12 @@
       // Shown below tracker at all times.
       // Renders 6 axis bars showing the current DNA vector in real time.
       function renderDNABar() {
-        const wrap = document.getElementById('dna-bar-wrap');
+        const wrap = document.getElementById('blueprint-bar-wrap');
         if (!wrap) return;
 
         if (!dnaVec) {
           wrap.classList.add('visible');
-          const sub = document.getElementById('dna-bar-sub');
+          const sub = document.getElementById('blueprint-bar-sub');
           if (sub) sub.textContent = 'building your profile...';
           return;
         }
@@ -2687,28 +2687,28 @@
         // Sub-label: summarise what the DNA "wants"
         const topAxis = DNA_AXES[dnaVec.indexOf(Math.max(...dnaVec))];
         const lowAxis = DNA_AXES[dnaVec.indexOf(Math.min(...dnaVec))];
-        document.getElementById('dna-bar-sub').textContent =
+        document.getElementById('blueprint-bar-sub').textContent =
           `high ${topAxis.toLowerCase()} · low ${lowAxis.toLowerCase()}`;
 
         // Build / update axis rows
-        const axesEl = document.getElementById('dna-axes');
+        const axesEl = document.getElementById('blueprint-axes');
         // Build once; update widths each call
         if (axesEl.children.length !== DNA_AXES.length) {
           axesEl.innerHTML = DNA_AXES.map(
             (ax, i) => `
-      <div class="dna-axis-row">
-        <div class="dna-axis-name">${ax}</div>
-        <div class="dna-axis-track">
-          <div class="dna-axis-fill" id="dna-ax-${i}" style="width:0%"></div>
+      <div class="blueprint-axis-row">
+        <div class="blueprint-axis-name">${ax}</div>
+        <div class="blueprint-axis-track">
+          <div class="blueprint-axis-fill" id="blueprint-ax-${i}" style="width:0%"></div>
         </div>
-        <div class="dna-axis-val" id="dna-ax-v-${i}"></div>
+        <div class="blueprint-axis-val" id="blueprint-ax-v-${i}"></div>
       </div>`
           ).join('');
         }
         DNA_AXES.forEach((_, i) => {
           const pct = Math.round(dnaVec[i] * 100);
-          const fill = document.getElementById(`dna-ax-${i}`);
-          const val = document.getElementById(`dna-ax-v-${i}`);
+          const fill = document.getElementById(`blueprint-ax-${i}`);
+          const val = document.getElementById(`blueprint-ax-v-${i}`);
           if (fill) fill.style.width = pct + '%';
           if (val) val.textContent = pct;
         });
@@ -3531,16 +3531,16 @@
     <span class="ds-panel-val" style="font-style:italic;color:var(--orange);">${archetype}</span>
   </div>
   <div class="ds-panel-body">
-    <div class="dna-fp">
+    <div class="blueprint-fp">
       ${axes
         .map((ax, i) => {
           const pct = Math.round(vec[i] * 100);
           const fillColor =
             pct >= 70 ? 'var(--orange)' : pct >= 45 ? 'rgba(13,13,13,.35)' : 'rgba(13,13,13,.15)';
-          return `<div class="dna-fp-row">
-          <div class="dna-fp-label">${ax}</div>
-          <div class="dna-fp-bar-bg"><div class="dna-fp-bar-fill" style="width:${pct}%;background:${fillColor};"></div></div>
-          <div class="dna-fp-num">${pct}</div>
+          return `<div class="blueprint-fp-row">
+          <div class="blueprint-fp-label">${ax}</div>
+          <div class="blueprint-fp-bar-bg"><div class="blueprint-fp-bar-fill" style="width:${pct}%;background:${fillColor};"></div></div>
+          <div class="blueprint-fp-num">${pct}</div>
         </div>`;
         })
         .join('')}
@@ -3732,7 +3732,7 @@ ${choicesHTML}
         px = 60;
         const pills2 = [['FINISH', dna.finish || '—'], ['RADIUS', `${dna.radius ?? 8}px`]].map(([l, v]) => { const p = pill(px, 260, l, v); px += (l.length * 7 + 16) + (v.length * 7.5 + 16) + 16; return p; }).join('');
         const today = new Date().toISOString().split('T')[0];
-        return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs>${grain}</defs><rect width="${W}" height="${H}" fill="${BG}"/>${(dna.finish || '').toLowerCase().includes('grain') ? `<rect width="${W}" height="${H}" fill="${BG}" filter="url(#grain)" opacity="0.4"/>` : ''}<line x1="60" y1="60" x2="${W - 60}" y2="60" stroke="${INK}" stroke-width="1" opacity="0.15"/><text x="60" y="52" font-family="monospace" font-size="10" fill="${MUTED}" letter-spacing="0.14em" opacity="0.7">SCHWEP DESIGN DNA</text><text x="${W - 60}" y="52" font-family="monospace" font-size="10" fill="${MUTED}" text-anchor="end" letter-spacing="0.06em" opacity="0.5">v1.0</text><text x="60" y="160" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="${INK}" letter-spacing="-2">${dna.archetype || 'Archetype'}</text><text x="60" y="196" font-family="monospace" font-size="13" fill="${ACCENT}" letter-spacing="0.08em">${dna.frame || '—'}  ·  ${dna.tone || '—'}</text>${pills1}${pills2}<line x1="620" y1="100" x2="620" y2="${H - 80}" stroke="${INK}" stroke-width="0.5" opacity="0.12"/><text x="${vecX}" y="310" font-family="monospace" font-size="10" fill="${MUTED}" letter-spacing="0.14em" opacity="0.7">DNA VECTOR</text><line x1="${vecX}" y1="320" x2="${vecX + barW + 40}" y2="320" stroke="${INK}" stroke-width="0.5" opacity="0.12"/>${vecBars}<line x1="60" y1="455" x2="${W - 60}" y2="455" stroke="${INK}" stroke-width="0.5" opacity="0.12"/><text x="60" y="448" font-family="monospace" font-size="10" fill="${MUTED}" letter-spacing="0.14em" opacity="0.7">PALETTE</text>${swatches}${(dna.palette || []).map((p, i) => { const x = swatchStartX + i * (swatchSize + swatchGap) + swatchSize / 2; return `<text x="${x}" y="${swatchY + swatchSize + 42}" font-family="monospace" font-size="8" fill="${ACCENT}" text-anchor="middle" letter-spacing="0.06em" opacity="0.8">${(p.role || '').toUpperCase()}</text>`; }).join('')}<line x1="60" y1="${H - 48}" x2="${W - 60}" y2="${H - 48}" stroke="${INK}" stroke-width="1" opacity="0.1"/><text x="60" y="${H - 30}" font-family="monospace" font-size="9" fill="${MUTED}" opacity="0.4" letter-spacing="0.06em">schwep.io · EXTRACTED DESIGN SPECIFICATION</text><text x="${W - 60}" y="${H - 30}" font-family="monospace" font-size="9" fill="${MUTED}" text-anchor="end" opacity="0.4">${today}</text></svg>`;
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs>${grain}</defs><rect width="${W}" height="${H}" fill="${BG}"/>${(dna.finish || '').toLowerCase().includes('grain') ? `<rect width="${W}" height="${H}" fill="${BG}" filter="url(#grain)" opacity="0.4"/>` : ''}<line x1="60" y1="60" x2="${W - 60}" y2="60" stroke="${INK}" stroke-width="1" opacity="0.15"/><text x="60" y="52" font-family="monospace" font-size="10" fill="${MUTED}" letter-spacing="0.14em" opacity="0.7">SCHWEP Design Blueprint</text><text x="${W - 60}" y="52" font-family="monospace" font-size="10" fill="${MUTED}" text-anchor="end" letter-spacing="0.06em" opacity="0.5">v1.0</text><text x="60" y="160" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="${INK}" letter-spacing="-2">${dna.archetype || 'Archetype'}</text><text x="60" y="196" font-family="monospace" font-size="13" fill="${ACCENT}" letter-spacing="0.08em">${dna.frame || '—'}  ·  ${dna.tone || '—'}</text>${pills1}${pills2}<line x1="620" y1="100" x2="620" y2="${H - 80}" stroke="${INK}" stroke-width="0.5" opacity="0.12"/><text x="${vecX}" y="310" font-family="monospace" font-size="10" fill="${MUTED}" letter-spacing="0.14em" opacity="0.7">DNA VECTOR</text><line x1="${vecX}" y1="320" x2="${vecX + barW + 40}" y2="320" stroke="${INK}" stroke-width="0.5" opacity="0.12"/>${vecBars}<line x1="60" y1="455" x2="${W - 60}" y2="455" stroke="${INK}" stroke-width="0.5" opacity="0.12"/><text x="60" y="448" font-family="monospace" font-size="10" fill="${MUTED}" letter-spacing="0.14em" opacity="0.7">PALETTE</text>${swatches}${(dna.palette || []).map((p, i) => { const x = swatchStartX + i * (swatchSize + swatchGap) + swatchSize / 2; return `<text x="${x}" y="${swatchY + swatchSize + 42}" font-family="monospace" font-size="8" fill="${ACCENT}" text-anchor="middle" letter-spacing="0.06em" opacity="0.8">${(p.role || '').toUpperCase()}</text>`; }).join('')}<line x1="60" y1="${H - 48}" x2="${W - 60}" y2="${H - 48}" stroke="${INK}" stroke-width="1" opacity="0.1"/><text x="60" y="${H - 30}" font-family="monospace" font-size="9" fill="${MUTED}" opacity="0.4" letter-spacing="0.06em">schwep.io · EXTRACTED DESIGN SPECIFICATION</text><text x="${W - 60}" y="${H - 30}" font-family="monospace" font-size="9" fill="${MUTED}" text-anchor="end" opacity="0.4">${today}</text></svg>`;
       }
 
       function getCodebaseFiles() {
@@ -3942,7 +3942,7 @@ ${choicesHTML}
         document.getElementById('tracker').style.display = 'none';
         document.querySelector('.app').classList.add('done-mode');
         document.getElementById('deck-area').style.display = 'none';
-        const dna = document.getElementById('dna-bar-wrap');
+        const dna = document.getElementById('blueprint-bar-wrap');
         if (dna) dna.classList.remove('visible');
         const ctx = document.getElementById('ctx-panel');
         if (ctx) ctx.classList.remove('visible');
@@ -4092,7 +4092,7 @@ ${choicesHTML}
         }
 
         // DNA match badge (only from round 2+, and only if DNA vector exists)
-        const badge = document.getElementById('dna-badge');
+        const badge = document.getElementById('blueprint-badge');
         if (badge) {
           if (dnaVec && st.round > 0 && data.matchInfo) {
             // Rank within this round's sorted deck (card 0 = best match)
@@ -4301,7 +4301,7 @@ ${choicesHTML}
       // ══════════════════════════════════════
       function showDone() {
         document.getElementById('deck-area').style.display = 'none';
-        document.getElementById('dna-bar-wrap').classList.remove('visible');
+        document.getElementById('blueprint-bar-wrap').classList.remove('visible');
         document.getElementById('tracker').style.display = 'none';
         const cp = document.getElementById('ctx-panel');
         if (cp) cp.classList.remove('visible');
@@ -4335,7 +4335,7 @@ ${choicesHTML}
         document.getElementById('tracker').style.display = '';
         document.querySelector('.app').classList.remove('done-mode');
         document.getElementById('done-screen').classList.remove('show');
-        const badge = document.getElementById('dna-badge');
+        const badge = document.getElementById('blueprint-badge');
         if (badge) badge.style.opacity = '0';
         const btn = document.getElementById('btn-again');
         if (btn) btn.textContent = '↺ Start Over';
@@ -4395,7 +4395,7 @@ ${choicesHTML}
         curY = 0;
 
         // Show "variant" badge
-        const badge = document.getElementById('dna-badge');
+        const badge = document.getElementById('blueprint-badge');
         if (badge) {
           badge.textContent = 'Variant · like or nope it';
           badge.style.color = 'rgba(13,13,13,.4)';
