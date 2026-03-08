@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Schwep — The Engine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/engine.css">
+</head>
+<body>
+  <div class="flash" id="flash"></div>
+  <div class="sky"></div>
+  
+  <!-- Clouds -->
+  <img class="cloud cl-tl" src="assets/images/transparentcloud1.png" alt="Cloud">
+  <img class="cloud cl-tr" src="assets/images/transparentcloud2.png" alt="Cloud">
+  <img class="cloud cl-bl" src="assets/images/transparentcloud1.png" alt="Cloud">
+  <img class="cloud cl-br" src="assets/images/transparentcloud2.png" alt="Cloud">
+  <img class="cloud cl-ml" src="assets/images/transparentcloud1.png" alt="Cloud">
+  <img class="cloud cl-mr" src="assets/images/transparentcloud2.png" alt="Cloud">
+
+  <!-- HUD -->
+  <div class="hud">
+    <div class="hud-logo">sch<span>w</span>ep</div>
+    <div class="track-wrap">
+      <div class="track-line"></div>
+      <div class="track-stops">
+        <div class="tstop" data-l="Frame"></div>
+        <div class="tstop" data-l="Shape"></div>
+        <div class="tstop" data-l="Tone"></div>
+        <div class="tstop" data-l="Finish"></div>
+      </div>
+      <img class="track-blimp" src="assets/images/MARTYBLIMP.png" alt="Blimp" id="blimp">
+    </div>
+    <div class="hud-label">Round <b id="round-num">1</b></div>
+  </div>
+
+  <!-- STAGE -->
+  <div class="stage">
+    <div class="rhead">
+      <div class="rhead-eye" id="round-label">Round 01 · The Frame</div>
+      <h1 class="rhead-title" id="round-title">Bento Grid</h1>
+    </div>
+
+    <!-- ARENA — the swipe zone -->
+    <div class="arena">
+      <div class="ghost ghost-2"></div>
+      <div class="ghost ghost-1"></div>
+      <div class="scard" id="card">
+        <div class="ind ind-like">LIKE</div>
+        <div class="ind ind-nope">NOPE</div>
+        <div class="scard-vis" id="card-vis">
+          <!-- Preview content will be injected here -->
+        </div>
+        <div class="scard-body">
+          <div class="scard-name" id="card-name">Bento Grid</div>
+          <div class="scard-desc" id="card-desc">A modular grid system with varied card sizes creating visual hierarchy.</div>
+          <div class="scard-hint">Swipe or click buttons</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SWIPE BUTTONS -->
+    <div class="swipe-btns">
+      <div>
+        <button class="sb sb-nope" id="btn-nope">✕</button>
+        <div class="sb-lbl">Nope</div>
+      </div>
+      <div>
+        <button class="sb sb-like" id="btn-like">✓</button>
+        <div class="sb-lbl">Like</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHAPE OVERLAY (only appears in Round 2) -->
+  <div class="shape-overlay" id="shape-overlay">
+    <div class="shape-glass">
+      <div class="sg-head">
+        <div class="sg-title">Corner Radius</div>
+        <div class="sg-val" id="radius-val">12px</div>
+      </div>
+      <div class="sg-presets">
+        <div class="sp-pill" data-r="0">
+          <div class="sp-box"></div>
+          Sharp
+        </div>
+        <div class="sp-pill" data-r="8">
+          <div class="sp-box"></div>
+          Soft
+        </div>
+        <div class="sp-pill on" data-r="12">
+          <div class="sp-box"></div>
+          Round
+        </div>
+        <div class="sp-pill" data-r="24">
+          <div class="sp-box"></div>
+          Pill
+        </div>
+      </div>
+      <div class="sg-slider-row">
+        <div class="sg-label">Radius</div>
+        <input type="range" class="rslider" id="radius-slider" min="0" max="32" value="12">
+      </div>
+    </div>
+  </div>
+
+  <!-- FINALE -->
+  <div class="finale" id="finale">
+    <div class="fc">
+      <div class="fc-top">
+        <div class="fc-brand">sch<span>w</span>ep</div>
+        <div class="fc-sub">Your Design DNA</div>
+      </div>
+      <div class="fc-panel">
+        <div class="fc-ph">Results</div>
+        <div class="fc-row">
+          <span class="fc-k">Frame:</span>
+          <span class="fc-v" id="result-frame">-</span>
+        </div>
+        <div class="fc-row">
+          <span class="fc-k">Shape:</span>
+          <span class="fc-v" id="result-shape">-</span>
+        </div>
+        <div class="fc-row">
+          <span class="fc-k">Tone:</span>
+          <span class="fc-v" id="result-tone">-</span>
+        </div>
+        <div class="fc-row">
+          <span class="fc-k">Finish:</span>
+          <span class="fc-v" id="result-finish">-</span>
+        </div>
+      </div>
+    </div>
+    <div class="fa">
+      <button class="btn-copy" id="btn-copy">Copy DNA Code</button>
+      <button class="btn-again" id="btn-again">Start Over</button>
+    </div>
+  </div>
+
+  <script src="assets/js/engine.js"></script>
+</body>
+</html>
