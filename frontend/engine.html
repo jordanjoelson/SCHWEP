@@ -2274,6 +2274,7 @@
         border-top: 1px solid var(--border);
       }
     </style>
+    <link rel="stylesheet" href="assets/js/card-preview.css" />
   </head>
   <body>
     <div id="flash"></div>
@@ -2518,6 +2519,21 @@
             desc: 'Magazine-style layout with large typography and white space.',
             preview: 'editorial',
           },
+          {
+            name: 'Dashboard Flow',
+            desc: 'Step-by-step wizard with progress and clear CTAs.',
+            preview: 'dashboardflow',
+          },
+          {
+            name: 'Asymmetric Hero',
+            desc: 'Bold hero block with secondary content cards.',
+            preview: 'asymmetric',
+          },
+          {
+            name: 'Modular Feed',
+            desc: 'Scrollable feed of compact cards with avatars and metadata.',
+            preview: 'modular',
+          },
         ],
         Shape: [
           {
@@ -2535,6 +2551,21 @@
             name: 'Pill Shape',
             desc: 'Fully rounded corners — 24px+ border radius.',
             preview: 'pill',
+          },
+          {
+            name: 'Asymmetric Cut',
+            desc: 'Diagonal or angled cuts for dynamic edges.',
+            preview: 'asymmetriccut',
+          },
+          {
+            name: 'Organic Blob',
+            desc: 'Soft irregular shapes and flowing curves.',
+            preview: 'organic',
+          },
+          {
+            name: 'Notched Corner',
+            desc: 'Receipt-style notch or cutout corners.',
+            preview: 'notched',
           },
         ],
         Tone: [
@@ -2558,6 +2589,21 @@
             desc: 'Playful personal script with organic flow.',
             preview: 'hand',
           },
+          {
+            name: 'Brutalist',
+            desc: 'Raw, unapologetic type and stark contrast.',
+            preview: 'brutalist',
+          },
+          {
+            name: 'Art Deco',
+            desc: 'Geometric patterns and luxurious accents.',
+            preview: 'artdeco',
+          },
+          {
+            name: 'Minimalist Zen',
+            desc: 'Extreme restraint with ample white space.',
+            preview: 'minimalzen',
+          },
         ],
         Finish: [
           {
@@ -2579,6 +2625,21 @@
             name: 'Neon Glow',
             desc: 'Vibrant neon effects with glowing highlights.',
             preview: 'neon',
+          },
+          {
+            name: 'Frosted Glass',
+            desc: 'Glassmorphism with blur and soft borders.',
+            preview: 'frosted',
+          },
+          {
+            name: 'Dark Luxury',
+            desc: 'Dark backgrounds with gold or metallic accents.',
+            preview: 'darkluxury',
+          },
+          {
+            name: 'Paper Print',
+            desc: 'Newsprint and editorial print texture.',
+            preview: 'paperprint',
           },
         ],
       };
@@ -2762,6 +2823,21 @@
           { name: 'Chalk Board', desc: 'Textured chalk on dark ground', preview: 'rawmono' },
           { name: 'Stamp Press', desc: 'Uneven ink, pressed character', preview: 'grain' },
         ],
+        Brutalist: [
+          { name: 'Neo-Brutalist', desc: 'Raw type, high contrast', preview: 'brutalist' },
+          { name: 'Concrete', desc: 'Heavy weight, no decoration', preview: 'boldtech' },
+          { name: 'Raw Grid', desc: 'Stark structure', preview: 'rawmono' },
+        ],
+        'Art Deco': [
+          { name: 'Gold Era', desc: 'Geometric luxury', preview: 'artdeco' },
+          { name: 'Retro Serif', desc: 'Classic editorial', preview: 'edmod' },
+          { name: 'Deco Sans', desc: 'Structured elegance', preview: 'swiss' },
+        ],
+        'Minimalist Zen': [
+          { name: 'Quiet Space', desc: 'Maximum restraint', preview: 'minimalzen' },
+          { name: 'Breathing Room', desc: 'Generous white space', preview: 'clean' },
+          { name: 'Single Focus', desc: 'One element', preview: 'edmod' },
+        ],
       };
 
       const FINISH_ALTS = {
@@ -2784,6 +2860,21 @@
           { name: 'Cyberpunk', desc: 'Multi-color neon, dense glow', preview: 'neon' },
           { name: 'Mono Neon', desc: 'Single-color phosphor beam', preview: 'rawmono' },
           { name: 'Holographic', desc: 'Iridescent spectrum shift', preview: 'neon' },
+        ],
+        'Frosted Glass': [
+          { name: 'Glassmorphism', desc: 'Blur and transparency', preview: 'frosted' },
+          { name: 'Vapor', desc: 'Soft frosted panels', preview: 'clean' },
+          { name: 'Frost', desc: 'Light glass overlay', preview: 'frosted' },
+        ],
+        'Dark Luxury': [
+          { name: 'Gold Accent', desc: 'Dark with metallic', preview: 'darkluxury' },
+          { name: 'Midnight', desc: 'Deep dark palette', preview: 'gritty' },
+          { name: 'Velvet', desc: 'Rich dark surface', preview: 'darkluxury' },
+        ],
+        'Paper Print': [
+          { name: 'Newsprint', desc: 'Editorial texture', preview: 'paperprint' },
+          { name: 'Linen', desc: 'Woven paper feel', preview: 'grain' },
+          { name: 'Letterpress', desc: 'Pressed type', preview: 'paperprint' },
         ],
       };
 
@@ -3261,6 +3352,162 @@
     </div>
   </div>
 </div>`,
+
+          // ─── FRAME: DASHBOARD FLOW (stepper, progress, form) ────────────────────────
+          dashboardflow: `<div style="width:100%;height:100%;padding:12px;background:#F5F2ED;display:flex;flex-direction:column;gap:12px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;">
+    <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,13,13,.4);">Step 2 of 4</div>
+    <div style="display:flex;gap:3px;">${[1,1,0,0].map((f,i)=>'<div style="width:18px;height:4px;background:'+(f?'#FF4D00':'rgba(13,13,13,.12)')+';border-radius:2px;"></div>').join('')}</div>
+  </div>
+  <div style="flex:1;background:white;border:2px solid #0D0D0D;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:10px;">
+    <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:#0D0D0D;">Your details</div>
+    <div><label style="display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.5);margin-bottom:4px;">Email</label><input type="text" placeholder="you@example.com" style="width:100%;padding:6px 8px;border:1.5px solid rgba(13,13,13,.2);border-radius:6px;font-size:12px;font-family:'DM Mono',monospace;" readonly></div>
+    <div><label style="display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.5);margin-bottom:4px;">Role</label><div style="padding:6px 8px;border:1.5px solid rgba(13,13,13,.2);border-radius:6px;font-size:12px;background:rgba(13,13,13,.04);color:rgba(13,13,13,.6);">Designer ▼</div></div>
+    <div style="display:flex;gap:6px;margin-top:4px;">
+      <button style="flex:1;background:#0D0D0D;color:white;border:none;padding:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:6px;font-family:'DM Mono',monospace;cursor:default;">Continue</button>
+      <button style="flex:1;border:1.5px solid rgba(13,13,13,.2);color:rgba(13,13,13,.6);padding:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:6px;font-family:'DM Mono',monospace;cursor:default;">Back</button>
+    </div>
+  </div>
+</div>`,
+
+          // ─── FRAME: ASYMMETRIC HERO ───────────────────────────────────────────────────
+          asymmetric: `<div style="width:100%;height:100%;display:grid;grid-template-columns:1.2fr 1fr;gap:0;background:#0D0D0D;overflow:hidden;">
+  <div style="padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;">
+    <div style="position:absolute;top:0;right:0;width:80px;height:80px;background:rgba(255,77,0,.2);border-radius:0 0 0 100%;"></div>
+    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);">Featured</div>
+    <div>
+      <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:22px;line-height:1.05;color:white;margin-bottom:6px;">Build<br><span style="color:#FF4D00;">something</span><br>real.</div>
+      <div style="width:32px;height:3px;background:#FF4D00;margin-bottom:8px;"></div>
+      <div style="display:inline-flex;align-items:center;gap:4px;background:#FF4D00;padding:6px 10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:white;font-family:'DM Mono',monospace;">Start <span style="display:flex;">${IC.arrow}</span></div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;padding:10px;justify-content:center;">
+    ${[['Projects','12 active'],['Team','4 members']].map(([t,v])=>'<div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:8px 10px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:12px;color:rgba(255,255,255,.7);">'+t+'</span><span style="font-family:\'Syne\',sans-serif;font-weight:700;font-size:14px;color:white;">'+v+'</span></div>').join('')}
+  </div>
+</div>`,
+
+          // ─── FRAME: MODULAR FEED (avatars, badges, list) ───────────────────────────────
+          modular: `<div style="width:100%;height:100%;background:#FAFAF8;padding:10px;display:flex;flex-direction:column;gap:0;overflow:hidden;">
+  <div style="padding:8px 0;border-bottom:1px solid rgba(13,13,13,.08);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,13,13,.4);">Activity</div>
+  ${[
+    { av: 'JD', name: 'Jamie Doe', meta: 'Updated settings', tag: 'New' },
+    { av: 'AK', name: 'Alex Kim', meta: 'Commented on layout', tag: '' },
+    { av: 'SM', name: 'Sam Miller', meta: 'Uploaded 3 files', tag: 'Pro' },
+  ].map(({av,name,meta,tag})=>'<div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(13,13,13,.06);"><div style="width:32px;height:32px;background:#0D0D0D;color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">'+av+'</div><div style="flex:1;min-width:0;"><div style="font-size:12px;font-weight:600;color:#0D0D0D;">'+name+'</div><div style="font-size:11px;color:rgba(13,13,13,.45);">'+meta+'</div></div>'+(tag?'<span style="background:rgba(255,77,0,.15);color:#FF4D00;font-size:9px;letter-spacing:.08em;padding:2px 6px;border-radius:4px;font-weight:700;">'+tag+'</span>':'')+'</div>').join('')}
+</div>`,
+
+          // ─── SHAPE: ASYMMETRIC CUT ───────────────────────────────────────────────────
+          asymmetriccut: `<div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a 0%,#0D0D0D 100%);padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 60px 60px 0;border-color:transparent rgba(255,77,0,.25) transparent transparent;"></div>
+  <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);">Edge</div>
+  <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:white;line-height:1.1;">CUT.<br><span style="color:#FF4D00;">ANGLE.</span></div>
+  <div style="display:flex;gap:6px;">
+    <div style="background:#FF4D00;color:white;padding:6px 12px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:'DM Mono',monospace;">Primary</div>
+    <div style="border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);padding:6px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-family:'DM Mono',monospace;">Secondary</div>
+  </div>
+</div>`,
+
+          // ─── SHAPE: ORGANIC BLOB ──────────────────────────────────────────────────────
+          organic: `<div style="width:100%;height:100%;background:#F0EDE7;padding:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;">
+  <div style="width:70px;height:70px;background:#FF4D00;border-radius:60% 40% 50% 50% / 50% 60% 40% 50%;opacity:.9;"></div>
+  <div style="width:50px;height:50px;background:rgba(255,77,0,.4);border-radius:40% 60% 50% 50% / 60% 40% 60% 40%;"></div>
+  <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:#0D0D0D;">Organic.<br>Flowing.</div>
+  <div style="display:flex;gap:8px;">
+    <div style="background:#0D0D0D;color:white;padding:6px 14px;font-size:12px;border-radius:99px;font-family:'DM Mono',monospace;">Rounded</div>
+    <div style="background:rgba(13,13,13,.08);color:#0D0D0D;padding:6px 14px;font-size:12px;border-radius:99px;font-family:'DM Mono',monospace;">Soft</div>
+  </div>
+</div>`,
+
+          // ─── SHAPE: NOTCHED CORNER ───────────────────────────────────────────────────
+          notched: `<div style="width:100%;height:100%;background:white;border:2px solid #0D0D0D;position:relative;padding:14px;display:flex;flex-direction:column;justify-content:space-between;">
+  <div style="position:absolute;top:0;right:0;width:24px;height:24px;background:#F2EFE9;border-left:2px solid #0D0D0D;border-bottom:2px solid #0D0D0D;"></div>
+  <div style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(13,13,13,.4);">Receipt</div>
+  <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:#0D0D0D;">NOTCHED.<br>CORNER.</div>
+  <div style="display:flex;gap:4px;">
+    <div style="flex:1;background:#0D0D0D;color:white;padding:6px;text-align:center;font-size:11px;letter-spacing:.1em;font-family:'DM Mono',monospace;">Confirm</div>
+    <div style="flex:1;border:1.5px solid #0D0D0D;padding:6px;text-align:center;font-size:11px;letter-spacing:.1em;font-family:'DM Mono',monospace;">Cancel</div>
+  </div>
+</div>`,
+
+          // ─── TONE: BRUTALIST ─────────────────────────────────────────────────────────
+          brutalist: `<div style="width:100%;height:100%;background:white;border:4px solid #0D0D0D;padding:12px;display:flex;flex-direction:column;justify-content:space-between;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:28px;line-height:.9;letter-spacing:-.03em;color:#0D0D0D;text-transform:uppercase;">BRUTAL.</div>
+    <div style="width:24px;height:24px;background:#0D0D0D;"></div>
+  </div>
+  <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#0D0D0D;">NO DECORATION. ONLY IMPACT.</div>
+  <div style="display:flex;gap:0;">
+    <div style="flex:1;background:#0D0D0D;color:white;padding:10px;text-align:center;font-size:12px;letter-spacing:.2em;font-family:'DM Mono',monospace;">ACTION</div>
+    <div style="flex:1;background:white;color:#0D0D0D;border:4px solid #0D0D0D;padding:10px;text-align:center;font-size:12px;letter-spacing:.2em;font-family:'DM Mono',monospace;">MORE</div>
+  </div>
+</div>`,
+
+          // ─── TONE: ART DECO ──────────────────────────────────────────────────────────
+          artdeco: `<div style="width:100%;height:100%;background:linear-gradient(180deg,#1C1917 0%,#0D0D0D 100%);padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C9A227,#E8C547,#C9A227);"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div style="font-family:'Georgia',serif;font-size:14px;font-weight:700;color:#C9A227;letter-spacing:.25em;">DECO</div>
+    <div style="display:flex;gap:4px;"><div style="width:6px;height:6px;background:#C9A227;"></div><div style="width:6px;height:6px;border:1px solid #C9A227;"></div></div>
+  </div>
+  <div style="font-family:'Georgia',serif;font-size:22px;font-weight:700;color:#E8C547;line-height:1.15;font-style:italic;">Luxe.<br>Geometry.</div>
+  <div style="display:flex;gap:8px;">
+    <div style="background:#C9A227;color:#0D0D0D;padding:6px 12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-family:'Georgia',serif;">Gold</div>
+    <div style="border:1px solid rgba(201,162,39,.5);color:#C9A227;padding:6px 12px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-family:'Georgia',serif;">Outline</div>
+  </div>
+</div>`,
+
+          // ─── TONE: MINIMALIST ZEN ─────────────────────────────────────────────────────
+          minimalzen: `<div style="width:100%;height:100%;background:#FAFAF8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;">
+  <div style="width:1px;height:40px;background:rgba(13,13,13,.12);"></div>
+  <div style="font-family:'Georgia',serif;font-size:18px;font-weight:400;color:rgba(13,13,13,.5);font-style:italic;text-align:center;line-height:1.5;">Less is more.</div>
+  <div style="width:24px;height:24px;border:1.5px solid rgba(13,13,13,.2);border-radius:50%;"></div>
+  <div style="width:1px;height:24px;background:rgba(13,13,13,.08);"></div>
+</div>`,
+
+          // ─── FINISH: FROSTED GLASS ───────────────────────────────────────────────────
+          frosted: `<div style="width:100%;height:100%;background:linear-gradient(135deg,#E8E6F0 0%,#D4D0E0 100%);padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;">
+  <div style="position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><circle cx=%2220%22 cy=%2220%22 r=%2218%22 fill=%22%23fff%22 opacity=%22.4%22/></svg>');opacity:.5;"></div>
+  <div style="position:relative;background:rgba(255,255,255,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.7);border-radius:14px;padding:14px;flex:1;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 32px rgba(0,0,0,.06);">
+    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(13,13,13,.4);">Glass</div>
+    <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:#0D0D0D;">Frosted.<br>Blur.</div>
+    <div style="display:flex;gap:6px;">
+      <div style="background:rgba(13,13,13,.08);color:#0D0D0D;padding:6px 12px;font-size:11px;border-radius:10px;font-family:'DM Mono',monospace;">Soft</div>
+      <div style="border:1px solid rgba(13,13,13,.12);color:rgba(13,13,13,.6);padding:6px 12px;font-size:11px;border-radius:10px;font-family:'DM Mono',monospace;">Light</div>
+    </div>
+  </div>
+</div>`,
+
+          // ─── FINISH: DARK LUXURY ─────────────────────────────────────────────────────
+          darkluxury: `<div style="width:100%;height:100%;background:#0D0D0D;padding:14px;display:flex;flex-direction:column;justify-content:space-between;">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(201,162,39,.8);">Luxury</div>
+    <div style="width:20px;height:20px;border:1px solid rgba(201,162,39,.5);"></div>
+  </div>
+  <div>
+    <div style="font-family:'Georgia',serif;font-size:20px;font-weight:700;color:#E8C547;line-height:1.2;margin-bottom:6px;">Refined.<br>Exclusive.</div>
+    <div style="width:28px;height:1px;background:linear-gradient(90deg,#C9A227,transparent);"></div>
+  </div>
+  <div style="display:flex;gap:6px;">
+    <div style="background:#C9A227;color:#0D0D0D;padding:7px 14px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-family:'Georgia',serif;">Primary</div>
+    <div style="border:1px solid rgba(201,162,39,.4);color:#C9A227;padding:7px 14px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:'Georgia',serif;">Secondary</div>
+  </div>
+</div>`,
+
+          // ─── FINISH: PAPER PRINT ──────────────────────────────────────────────────────
+          paperprint: `<div style="width:100%;height:100%;background:#E8E4DC;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.04%22 numOctaves=%223%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22 opacity=%220.08%22/></svg>');"></div>
+  <div style="position:relative;padding:12px;height:100%;display:flex;flex-direction:column;gap:8px;">
+    <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(60,50,40,.6);border-bottom:1px solid rgba(60,50,40,.2);padding-bottom:4px;">The Daily</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+      <div style="font-family:'Georgia',serif;font-size:14px;font-weight:700;color:#2C2419;line-height:1.25;">Headline one column text here.</div>
+      <div style="font-family:'Georgia',serif;font-size:11px;color:rgba(44,36,25,.7);line-height:1.5;">Body copy in second column for that editorial print feel and readability.</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:3px;">
+      ${[95,78,88,62].map(w=>'<div style="height:3px;width:'+w+'%;background:rgba(44,36,25,.15);"></div>').join('')}
+    </div>
+    <div style="font-size:10px;color:rgba(60,50,40,.5);">© 2024 — All rights reserved</div>
+  </div>
+</div>`,
         };
         return (
           map[type] || '<div style="width:100%;height:100%;background:rgba(13,13,13,.03);"></div>'
@@ -3323,6 +3570,33 @@
             { name: 'Prism', hex: '#00FFE0', role: 'Accent' },
             { name: 'Cloud', hex: '#FFFFFF', role: 'Surface' },
             { name: 'Amethyst', hex: '#9B51E0', role: 'Muted' },
+          ],
+        },
+        'Frosted Glass': {
+          swatches: [
+            { name: 'Mist', hex: '#E8E6F0', role: 'Background' },
+            { name: 'Slate', hex: '#4A4A5A', role: 'Primary' },
+            { name: 'Frost', hex: '#FFFFFF', role: 'Surface' },
+            { name: 'Ice', hex: '#D4D0E0', role: 'Muted' },
+            { name: 'Ink', hex: '#0D0D0D', role: 'Text' },
+          ],
+        },
+        'Dark Luxury': {
+          swatches: [
+            { name: 'Midnight', hex: '#0D0D0D', role: 'Background' },
+            { name: 'Gold', hex: '#C9A227', role: 'Primary' },
+            { name: 'Champagne', hex: '#E8C547', role: 'Accent' },
+            { name: 'Charcoal', hex: '#1C1917', role: 'Surface' },
+            { name: 'Silver', hex: '#888888', role: 'Muted' },
+          ],
+        },
+        'Paper Print': {
+          swatches: [
+            { name: 'Parchment', hex: '#E8E4DC', role: 'Background' },
+            { name: 'Ink', hex: '#2C2419', role: 'Primary' },
+            { name: 'Sepia', hex: '#6B5B4E', role: 'Accent' },
+            { name: 'Cream', hex: '#F5F0E8', role: 'Surface' },
+            { name: 'Dusk', hex: '#3C3228', role: 'Muted' },
           ],
         },
       };
@@ -3411,6 +3685,39 @@
             sample: 'Expressive curves and vintage warmth.',
           },
           meta: 'Georgia 700i / Georgia 400 — classic 70s editorial feel',
+        },
+        Brutalist: {
+          display: { name: 'Syne', weight: '800', size: '72px', style: 'normal', sample: 'BRUTAL' },
+          body: {
+            name: 'DM Mono',
+            weight: '700',
+            size: '14px',
+            style: 'normal',
+            sample: 'RAW. UNAPOLOGETIC. IMPACT.',
+          },
+          meta: 'Syne 800 / DM Mono 700 — brutal, no decoration',
+        },
+        'Art Deco': {
+          display: { name: 'Georgia', weight: '700', size: '64px', style: 'italic', sample: 'Deco' },
+          body: {
+            name: 'Georgia',
+            weight: '400',
+            size: '15px',
+            style: 'normal',
+            sample: 'Geometric luxury and refined curves.',
+          },
+          meta: 'Georgia 700i / Georgia 400 — art deco elegance',
+        },
+        'Minimalist Zen': {
+          display: { name: 'Georgia', weight: '400', size: '48px', style: 'italic', sample: 'Less' },
+          body: {
+            name: 'Georgia',
+            weight: '400',
+            size: '14px',
+            style: 'normal',
+            sample: 'Restraint. Space. One thing at a time.',
+          },
+          meta: 'Georgia 400i / Georgia 400 — minimal, calm',
         },
       };
 
@@ -4118,7 +4425,17 @@ ${choicesHTML}
         if (!nameEl || !descEl || !visEl) return;
         nameEl.textContent = data.name;
         descEl.textContent = data.desc;
-        visEl.innerHTML = makePreview(data.preview);
+        // Use React + Lucide + shadcn-style components when available for this preview type
+        if (window.SchwepCardPreview) {
+          try {
+            window.SchwepCardPreview.unmount(visEl);
+          } catch (e) {}
+          if (!window.SchwepCardPreview.render(data.preview, visEl)) {
+            visEl.innerHTML = makePreview(data.preview);
+          }
+        } else {
+          visEl.innerHTML = makePreview(data.preview);
+        }
         
         // Apply theme data attribute
         if (cardEl) {
@@ -4401,10 +4718,18 @@ ${choicesHTML}
         cardEl.style.transform = 'translate(50px,0) scale(.95)';
         cardEl.style.opacity = '0';
 
-        // Update content
+        // Update content (use React + Lucide + shadcn when available)
         document.getElementById('card-name').textContent = altData.name;
         document.getElementById('card-desc').textContent = altData.desc;
-        document.getElementById('card-vis').innerHTML = makePreview(altData.preview);
+        var altVisEl = document.getElementById('card-vis');
+        if (window.SchwepCardPreview) {
+          try { window.SchwepCardPreview.unmount(altVisEl); } catch (e) {}
+          if (!window.SchwepCardPreview.render(altData.preview, altVisEl)) {
+            altVisEl.innerHTML = makePreview(altData.preview);
+          }
+        } else {
+          altVisEl.innerHTML = makePreview(altData.preview);
+        }
         
         // Apply theme data attribute
         if (cardEl) {
@@ -4474,7 +4799,7 @@ ${choicesHTML}
           if (roundChanged) {
             ctxBod.innerHTML =
               '<div style="display:flex;flex-direction:column;gap:10px;"><div style="font-family:\'DM Mono\',monospace;font-size:8.5px;line-height:1.7;color:rgba(13,13,13,.45);">Pick your foundation layout. This seeds the Blueprint engine — every subsequent round reorders around your choice.</div><div style="display:flex;flex-direction:column;gap:4px;">' +
-              ['Bento Grid', 'Split Layout', 'Swiss Grid', 'Editorial']
+              ['Bento Grid', 'Split Layout', 'Swiss Grid', 'Editorial', 'Dashboard Flow', 'Asymmetric Hero', 'Modular Feed']
                 .map(
                   (n) =>
                     '<div style="font-size:12px;padding:5px 8px;background:rgba(13,13,13,.04);border-radius:5px;border:1px solid rgba(13,13,13,.08);color:rgba(13,13,13,.5);">' +
@@ -4541,12 +4866,7 @@ ${choicesHTML}
           ['Pill', '99,99,99,99'],
           ['Asym', '0,14,14,0'],
         ];
-        const sliders = [
-          ['Top Left', 'tl', tl],
-          ['Top Right', 'tr', tr],
-          ['Bot Right', 'br', br],
-          ['Bot Left', 'bl', bl],
-        ];
+        const uniformVal = Math.round((tl + tr + br + bl) / 4);
         return `
 <div class="radius-preview-wrap">
   <div class="radius-demo" id="radius-demo" style="border-radius:${r};"></div>
@@ -4555,42 +4875,36 @@ ${choicesHTML}
   ${presets.map(([l, v]) => `<button class="rad-preset" data-preset="${v}">${l}</button>`).join('')}
 </div>
 <div class="radius-sliders">
-  ${sliders
-    .map(
-      ([label, key, val]) => `
   <div class="rad-row">
     <div class="rad-label-row">
-      <span class="rad-label">${label}</span>
-      <span class="rad-val" id="rad-val-${key}">${val}px</span>
+      <span class="rad-label">Radius</span>
+      <span class="rad-val" id="rad-val-all">${uniformVal}px</span>
     </div>
-    <input type="range" class="rad-slider" id="rad-${key}" min="0" max="99" value="${val}">
-  </div>`
-    )
-    .join('')}
+    <input type="range" class="rad-slider" id="rad-all" min="0" max="99" value="${uniformVal}">
+  </div>
 </div>`;
       }
 
       function attachRadiusListeners() {
-        ['tl', 'tr', 'bl', 'br'].forEach((key) => {
-          const inp = document.getElementById(`rad-${key}`);
-          if (!inp) return;
+        const inp = document.getElementById('rad-all');
+        if (inp) {
           inp.addEventListener('input', () => {
-            radState[key] = +inp.value;
-            const v = document.getElementById(`rad-val-${key}`);
-            if (v) v.textContent = radState[key] + 'px';
+            const val = +inp.value;
+            Object.assign(radState, { tl: val, tr: val, bl: val, br: val });
+            const v = document.getElementById('rad-val-all');
+            if (v) v.textContent = val + 'px';
             applyRadiusToDemo();
           });
-        });
+        }
         document.querySelectorAll('.rad-preset').forEach((btn) => {
           btn.addEventListener('click', () => {
             const [a, b, d, e] = btn.dataset.preset.split(',').map(Number);
             Object.assign(radState, { tl: a, tr: b, bl: e, br: d });
-            ['tl', 'tr', 'bl', 'br'].forEach((k) => {
-              const i = document.getElementById(`rad-${k}`);
-              const v = document.getElementById(`rad-val-${k}`);
-              if (i) i.value = radState[k];
-              if (v) v.textContent = radState[k] + 'px';
-            });
+            const uniformVal = Math.round((a + b + d + e) / 4);
+            const i = document.getElementById('rad-all');
+            const v = document.getElementById('rad-val-all');
+            if (i) i.value = uniformVal;
+            if (v) v.textContent = uniformVal + 'px';
             applyRadiusToDemo();
             document.querySelectorAll('.rad-preset').forEach((b) => b.classList.remove('active'));
             btn.classList.add('active');
@@ -4749,6 +5063,7 @@ ${choicesHTML}
         init();
       }
     </script>
+    <script src="assets/js/card-preview.iife.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   </body>
 </html>

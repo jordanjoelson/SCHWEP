@@ -99,6 +99,123 @@ body {
   position: relative;
 }
 
+/* ─── Receipt-style Design Blueprint (hero) ─── */
+.blueprint-receipt-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 420px;
+  padding: 24px 0;
+}
+
+.blueprint-receipt {
+  width: 100%;
+  max-width: 280px;
+  background: #faf9f5;
+  border: 1px solid rgba(13, 13, 13, 0.12);
+  border-radius: 4px;
+  padding: 24px 20px 20px;
+  font-family: 'DM Mono', 'Consolas', monospace;
+  font-size: 0.7rem;
+  color: #1a1a1a;
+  box-shadow: 0 4px 24px rgba(13, 13, 13, 0.08), 0 1px 3px rgba(13, 13, 13, 0.06);
+  position: relative;
+  z-index: 2;
+}
+
+.neon-glow-paper {
+  box-shadow: 0 4px 24px rgba(13, 13, 13, 0.08), 0 0 24px rgba(255, 77, 0, 0.06), 0 0 48px rgba(255, 144, 232, 0.04);
+}
+
+.receipt-header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.receipt-blimp {
+  width: 56px;
+  height: auto;
+  margin-bottom: 8px;
+  mix-blend-mode: multiply;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.receipt-brand {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.receipt-title {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--orange);
+  margin-top: 2px;
+}
+
+.receipt-divider {
+  color: rgba(13, 13, 13, 0.25);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+.receipt-panel-label {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 13, 0.55);
+  margin-bottom: 12px;
+  font-size: 0.65rem;
+}
+
+.receipt-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 10px;
+  min-height: 1.4em;
+}
+
+.receipt-k {
+  flex-shrink: 0;
+  color: rgba(13, 13, 13, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.receipt-dots {
+  flex: 1;
+  min-width: 8px;
+  border-bottom: 1px dotted rgba(13, 13, 13, 0.3);
+  margin: 0 4px;
+  align-self: flex-end;
+  margin-bottom: 3px;
+}
+
+.receipt-v {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--orange);
+  text-align: right;
+}
+
+.receipt-footer {
+  text-align: center;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: rgba(13, 13, 13, 0.45);
+  margin-top: 14px;
+}
+
 .hero-card-stack {
   position: relative;
   height: 100%;
@@ -437,6 +554,82 @@ body {
 }
 
 /* ─────────────────────────────
+   TASTE-BASED VS TRADITIONAL
+───────────────────────────── */
+.taste-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.taste-block {
+  border: 1.5px solid rgba(13, 13, 13, 0.12);
+  border-radius: 10px;
+  padding: 24px;
+  background: var(--white);
+  min-height: 120px;
+}
+
+.taste-block.traditional {
+  border-color: rgba(13, 13, 13, 0.18);
+}
+
+.taste-block.taste-based {
+  border-color: rgba(255, 77, 0, 0.25);
+  background: linear-gradient(to bottom, rgba(255, 77, 0, 0.03), var(--white));
+}
+
+.taste-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 13, 0.5);
+  margin-bottom: 14px;
+}
+
+.taste-prompt-mock {
+  background: #f5f5f0;
+  border: 1px solid rgba(13, 13, 13, 0.1);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.prompt-input {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.taste-flow-mock {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  font-size: 0.88rem;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.flow-arrow {
+  font-size: 1rem;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .taste-compare {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─────────────────────────────
    ROUNDS — THE 4-STEP GRID
 ───────────────────────────── */
 .rounds-grid {
@@ -662,6 +855,78 @@ body {
 
 .cereal-box-visual {
   position: relative;
+}
+
+.mood-board-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.cbox-receipt {
+  max-width: 300px;
+}
+
+.mood-board-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--white);
+  border: 1px dashed rgba(13, 13, 13, 0.2);
+  border-radius: 8px;
+  max-width: 320px;
+}
+
+.mood-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid rgba(13, 13, 13, 0.15);
+}
+
+.mood-orange { background: var(--orange); }
+.mood-pink { background: var(--pink); }
+
+.mood-bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  width: 36px;
+  height: 36px;
+  background: rgba(13, 13, 13, 0.08);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.mood-bento div {
+  background: rgba(13, 13, 13, 0.25);
+  border-radius: 2px;
+}
+
+.mood-bento div:first-child {
+  grid-row: span 2;
+}
+
+.mood-type {
+  font-family: 'Instrument Serif', serif;
+  font-size: 0.65rem;
+  font-style: italic;
+  color: rgba(13, 13, 13, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mood-neon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px var(--orange), 0 0 16px var(--pink);
 }
 
 .cbox {
@@ -892,6 +1157,189 @@ body {
 }
 
 /* ─────────────────────────────
+   PRICING SECTION
+───────────────────────────── */
+.pricing-section {
+  background: var(--white);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.pricing-card {
+  background: var(--white);
+  border: 1.5px solid rgba(13, 13, 13, 0.11);
+  border-radius: 14px;
+  padding: 40px 32px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(13, 13, 13, 0.08), 0 2px 8px rgba(13, 13, 13, 0.04);
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(13, 13, 13, 0.12), 0 4px 12px rgba(13, 13, 13, 0.06);
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--orange);
+  box-shadow: 0 8px 40px rgba(255, 77, 0, 0.15), 0 2px 8px rgba(13, 13, 13, 0.06);
+  transform: scale(1.02);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 12px 56px rgba(255, 77, 0, 0.2), 0 4px 12px rgba(13, 13, 13, 0.08);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--orange);
+  color: var(--white);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--black);
+  box-shadow: 0 2px 8px rgba(13, 13, 13, 0.15);
+}
+
+.pricing-header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1.5px solid rgba(13, 13, 13, 0.11);
+}
+
+.pricing-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.price-amount {
+  font-family: 'Instrument Serif', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--black);
+}
+
+.price-period {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.pricing-features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.feature-item.disabled {
+  opacity: 0.4;
+  color: #999;
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-top: 2px;
+}
+
+.feature-item:not(.disabled) .feature-icon {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.feature-item.disabled .feature-icon {
+  background: rgba(13, 13, 13, 0.1);
+  color: #999;
+}
+
+.feature-text {
+  flex: 1;
+  color: var(--black);
+}
+
+.feature-item.disabled .feature-text {
+  color: #999;
+}
+
+.pricing-cta {
+  width: 100%;
+  padding: 14px 24px;
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1.5px solid rgba(13, 13, 13, 0.15);
+  background: var(--white);
+  color: var(--black);
+  transition: all 0.15s;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(13, 13, 13, 0.08);
+}
+
+.pricing-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 13, 13, 0.12);
+}
+
+.pricing-cta.primary {
+  background: var(--orange);
+  color: var(--white);
+  border-color: var(--orange);
+  box-shadow: 0 4px 16px rgba(255, 77, 0, 0.25);
+}
+
+.pricing-cta.primary:hover {
+  background: #ff5c1a;
+  box-shadow: 0 6px 20px rgba(255, 77, 0, 0.3);
+}
+
+/* ─────────────────────────────
    FINAL CTA
 ───────────────────────────── */
 .final-cta {
@@ -980,8 +1428,25 @@ body {
     grid-template-columns: 1fr;
     gap: 48px;
   }
+  .mood-board-wrap {
+    align-items: center;
+  }
+  .mood-board-strip {
+    width: 100%;
+    max-width: 320px;
+  }
   .testimonial-section {
     padding: 72px 28px;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+  .pricing-card.featured:hover {
+    transform: translateY(-4px);
   }
   .final-cta {
     padding: 80px 28px;

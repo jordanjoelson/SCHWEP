@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en" class="docs-page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schwep — Documentation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700;900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/shared.css" />
+    <link rel="stylesheet" href="assets/css/docs.css" />
+  </head>
+  <body class="docs-page">
+    <div class="docs-layout">
+      <!-- SIDEBAR -->
+      <aside class="docs-sidebar">
+        <div class="docs-sidebar-inner">
+          <a href="index.html" class="docs-nav-logo">
+            <img src="assets/images/schwep.png" alt="Schwep" />
+          </a>
+
+          <nav class="docs-nav" aria-label="Documentation">
+            <div class="docs-nav-section">
+              <div class="docs-nav-section-title">Getting started</div>
+              <ul class="docs-nav-list">
+                <li class="docs-nav-item">
+                  <a href="#introduction">Introduction</a>
+                </li>
+                <li class="docs-nav-item">
+                  <a href="#visual-prompting">What is visual prompting</a>
+                </li>
+                <li class="docs-nav-item">
+                  <a href="#how-it-works">How it works</a>
+                </li>
+                <li class="docs-nav-item">
+                  <a href="#four-rounds">The 4 rounds</a>
+                </li>
+                <li class="docs-nav-item">
+                  <a href="#design-blueprint">Design blueprint</a>
+                </li>
+                <li class="docs-nav-item">
+                  <a href="#design-dictionary">Design dictionary</a>
+                  <ul>
+                    <li class="docs-nav-item"><a href="#design-dictionary">Layout &amp; shape</a></li>
+                    <li class="docs-nav-item"><a href="#design-dictionary">Tone &amp; finish</a></li>
+                  </ul>
+                </li>
+                <li class="docs-nav-item">
+                  <a href="#component-library">Component library</a>
+                  <ul>
+                    <li class="docs-nav-item"><a href="#component-library">Form</a></li>
+                    <li class="docs-nav-item"><a href="#component-library">Navigation</a></li>
+                    <li class="docs-nav-item"><a href="#component-library">Feedback</a></li>
+                    <li class="docs-nav-item"><a href="#component-library">Layout</a></li>
+                    <li class="docs-nav-item"><a href="#component-library">Content</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="docs-main">
+        <a href="index.html" class="docs-back">← Home</a>
+
+        <div class="docs-content">
+          <section id="introduction">
+            <span class="docs-eyebrow">Documentation</span>
+            <h1>Schwep <em>Docs</em></h1>
+            <p>
+              Schwep turns your taste into a technical design blueprint using <strong>visual prompting</strong>—no long briefs, no guesswork. You match; we extract. This doc explains the product, the four rounds, and the language we use.
+            </p>
+          </section>
+
+          <div class="docs-strip">
+            <div class="docs-strip-inner">
+              <span class="docs-strip-text">Visual prompting</span>
+              <span class="docs-strip-sep">·</span>
+              <span class="docs-strip-text">Design blueprint</span>
+              <span class="docs-strip-sep">·</span>
+              <span class="docs-strip-text">4 rounds</span>
+              <span class="docs-strip-sep">·</span>
+              <span class="docs-strip-text">Component library</span>
+              <span class="docs-strip-sep">·</span>
+              <span class="docs-strip-text">Visual prompting</span>
+              <span class="docs-strip-sep">·</span>
+            </div>
+          </div>
+
+          <section id="visual-prompting">
+            <h2>What is visual prompting</h2>
+            <p>
+              <strong>Visual prompting</strong> means we learn your design preferences by showing you options and letting you choose—not by reading paragraphs of copy or filling out forms. You react to real layout, color, typography, and effect examples; our recognition engine turns those reactions into a structured spec.
+            </p>
+            <p>
+              Instead of “I want it to feel editorial but not too soft,” you see concrete frames, palettes, type treatments, and finishes and pick what matches. The system infers the rest. That’s visual prompting: your choices are the prompt; the output is a design blueprint you can hand to developers or design tools.
+            </p>
+          </section>
+
+          <section id="how-it-works">
+            <h2>How it works</h2>
+            <p>
+              You go through <strong>4 rounds</strong> of matching. In each round you see a set of options (e.g. layout structures, color schemes, type styles, or effects). You pick what fits your vision; you can skip a few per round. As you go, we build a profile—your design DNA—and at the end we output a single, coherent <strong>design blueprint</strong>.
+            </p>
+            <ul>
+              <li><strong>Upload or start from scratch</strong> — Optional references (screenshots or URLs) can seed the engine; otherwise you start from the first round.</li>
+              <li><strong>Match, don’t describe</strong> — No writing required. Your clicks and skips are the only input.</li>
+              <li><strong>Get a blueprint</strong> — Layout, palette, typography, and finish are encoded in a spec (e.g. JSON) plus a component set and design dictionary you can reuse.</li>
+            </ul>
+          </section>
+
+          <section id="four-rounds">
+            <h2>The 4 rounds</h2>
+            <p>
+              Each round captures one layer of your design language. Together they form your blueprint.
+            </p>
+
+            <h3>Round 01 — The frame</h3>
+            <p>
+              Layout structure and spatial relationships: bento grids, split layouts, Swiss grid, editorial-style blocks. We learn how you like content grouped and prioritized.
+            </p>
+
+            <h3>Round 02 — The palette</h3>
+            <p>
+              Color schemes, contrast, and hierarchy. Primary, secondary, and accent choices are inferred from the options you match.
+            </p>
+
+            <h3>Round 03 — The tone</h3>
+            <p>
+              Typography: display vs body, serif vs sans, weight and spacing. Bold tech, editorial modern, raw mono, handwritten—your picks define the tone.
+            </p>
+
+            <h3>Round 04 — The finish</h3>
+            <p>
+              Effects and texture: grain, clean minimal, gritty edge, neon glow. This round locks in the final “feel” of the interface.
+            </p>
+          </section>
+
+          <section id="design-blueprint">
+            <h2>Design blueprint</h2>
+            <p>
+              The <strong>design blueprint</strong> is the output of the 4 rounds. It’s a technical specification that includes:
+            </p>
+            <ul>
+              <li><strong>Layout</strong> — Chosen frame (e.g. Bento Grid, Split Layout) and structural rules.</li>
+              <li><strong>Colors</strong> — Primary, secondary, and accent tokens (hex/CSS vars).</li>
+              <li><strong>Typography</strong> — Font families, weights, sizes, and pairings.</li>
+              <li><strong>Shape &amp; finish</strong> — Border radius, shadows, and effect treatments.</li>
+              <li><strong>Component library</strong> — A set of UI components (buttons, cards, forms, etc.) styled to match your blueprint.</li>
+              <li><strong>Design dictionary</strong> — Definitions for every term the system uses (layout names, tone names, finish names) so teams speak the same language.</li>
+            </ul>
+            <p>
+              You can save blueprints, export them, and reuse them across projects. The archive stores your saved visions and the learned dictionary and components.
+            </p>
+          </section>
+
+          <section id="design-dictionary">
+            <h2>Design dictionary</h2>
+            <p>
+              The design dictionary defines the vocabulary used across the product: layout types, shapes, tones, and finishes. Below are the terms you’ll see in rounds and in your blueprint.
+            </p>
+            <div class="docs-card">
+              <div id="docs-dictionary-grid" class="docs-dictionary-grid"></div>
+            </div>
+          </section>
+
+          <section id="component-library">
+            <h2>Component library</h2>
+            <p>
+              The component library is a set of UI building blocks that align with your design blueprint. Use them in interfaces to keep everything consistent. Below are all supported components, with short descriptions and examples. Filter by category to narrow the list.
+            </p>
+            <div class="docs-filter-row">
+              <button type="button" class="docs-filter-btn active" data-filter="all">All</button>
+              <button type="button" class="docs-filter-btn" data-filter="form">Form</button>
+              <button type="button" class="docs-filter-btn" data-filter="navigation">Navigation</button>
+              <button type="button" class="docs-filter-btn" data-filter="feedback">Feedback</button>
+              <button type="button" class="docs-filter-btn" data-filter="layout">Layout</button>
+              <button type="button" class="docs-filter-btn" data-filter="content">Content</button>
+            </div>
+            <div id="docs-library-grid" class="docs-component-grid"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div class="foot-logo"><img src="assets/images/schwep.png" alt="schwep" /></div>
+      <div class="foot-copy">© 2024 Schwep. All rights reserved.</div>
+    </footer>
+
+    <script src="assets/js/docs.js"></script>
+  </body>
+</html>

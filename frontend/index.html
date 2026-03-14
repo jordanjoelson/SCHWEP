@@ -16,7 +16,10 @@
     <!-- ═══ NAV ═══ -->
     <nav>
       <a href="index.html" class="nav-logo"><img src="assets/images/schwep.png" alt="schwep" /></a>
-      <a class="nav-cta" href="signup.html">Try It Free →</a>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="docs.html" class="nav-link">Docs</a>
+        <a class="nav-cta" href="signup.html">Try It Free →</a>
+      </div>
     </nav>
 
     <!-- ═══ HERO ═══ -->
@@ -129,6 +132,28 @@
       </div>
     </section>
 
+    <!-- ═══ TASTE-BASED VS TRADITIONAL ═══ -->
+    <section class="section taste-section">
+      <span class="section-eyebrow">The Difference</span>
+      <h2>What <em>Taste-Based Generation</em> Really Means</h2>
+      <div class="taste-compare">
+        <div class="taste-block traditional">
+          <div class="taste-label">Traditional AI prompting</div>
+          <div class="taste-prompt-mock">
+            <div class="prompt-input" contenteditable="false">Create a modern SaaS website with a dark theme and rounded cards.</div>
+          </div>
+        </div>
+        <div class="taste-block taste-based">
+          <div class="taste-label">Taste-based generation</div>
+          <div class="taste-flow-mock">
+            <span class="flow-step">User swipes 10 designs</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">AI learns preferences</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ 4 ROUNDS ═══ -->
     <section class="section">
       <span class="section-eyebrow">The Process</span>
@@ -172,6 +197,7 @@
       <h2>How We <em>Extract</em> Your Blueprint</h2>
       <p class="section-sub">
         Our recognition engine analyzes visual patterns across multiple dimensions.
+        <a href="docs.html" class="nav-link" style="display: inline-block; margin-top: 8px;">Read the docs →</a>
       </p>
       <div class="edu-layout">
         <div class="edu-items">
@@ -246,41 +272,54 @@
       </div>
     </section>
 
-    <!-- ═══ CEREAL BOX ═══ -->
+    <!-- ═══ CEREAL BOX — Receipt / Mood Board ═══ -->
     <section class="section">
       <span class="section-eyebrow">Your Spec</span>
-      <h2>Your Design <em>Blueprint</em> in a Box</h2>
+      <h2>Your Design <em>Blueprint</em> — Receipt & Mood</h2>
       <p class="section-sub">
-        Every specification is packaged as a complete, ready-to-use design system.
+        Every specification is packaged like a receipt: Blimp, Nutrition Facts, and a ready-to-use design system.
       </p>
       <div class="cereal-layout">
-        <div class="cereal-box-visual">
-          <div class="cbox-shadow"></div>
-          <div class="cbox">
-            <div class="cbox-top">
-              <img class="cbox-logo" src="assets/images/schwep.png" alt="Schwep" />
-              <div class="cbox-sub">Design Blueprint</div>
-              <img class="cbox-blimp" src="assets/images/MARTYBLIMP.png" alt="Blimp" />
+        <div class="cereal-box-visual mood-board-wrap">
+          <div class="blueprint-receipt cbox-receipt neon-glow-paper">
+            <div class="receipt-header">
+              <img class="receipt-blimp" src="assets/images/MARTYBLIMP.png" alt="Blimp" />
+              <div class="receipt-brand">Schwep</div>
+              <div class="receipt-title">Design Blueprint</div>
             </div>
-            <div class="cbox-panel">
-              <div class="cbox-panel-head">Nutrition Facts</div>
-              <div class="cbox-row">
-                <span class="cbox-k">Layout</span>
-                <span class="cbox-v">Bento Grid</span>
-              </div>
-              <div class="cbox-row">
-                <span class="cbox-k">Colors</span>
-                <span class="cbox-v">Orange + Pink</span>
-              </div>
-              <div class="cbox-row">
-                <span class="cbox-k">Typography</span>
-                <span class="cbox-v">Editorial</span>
-              </div>
-              <div class="cbox-row">
-                <span class="cbox-k">Effects</span>
-                <span class="cbox-v">Neon Glow</span>
-              </div>
+            <div class="receipt-divider">┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄</div>
+            <div class="receipt-panel-label">Nutrition Facts</div>
+            <div class="receipt-row">
+              <span class="receipt-k">Layout</span>
+              <span class="receipt-dots"></span>
+              <span class="receipt-v">Bento Grid</span>
             </div>
+            <div class="receipt-row">
+              <span class="receipt-k">Colors</span>
+              <span class="receipt-dots"></span>
+              <span class="receipt-v">Orange + Pink</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-k">Typography</span>
+              <span class="receipt-dots"></span>
+              <span class="receipt-v">Editorial</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-k">Effects</span>
+              <span class="receipt-dots"></span>
+              <span class="receipt-v">Neon Glow</span>
+            </div>
+            <div class="receipt-divider">┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄</div>
+            <div class="receipt-footer">Your taste → Technical spec</div>
+          </div>
+          <div class="mood-board-strip" aria-hidden="true">
+            <div class="mood-swatch mood-orange"></div>
+            <div class="mood-swatch mood-pink"></div>
+            <div class="mood-bento">
+              <div></div><div></div><div></div>
+            </div>
+            <div class="mood-type">Editorial</div>
+            <div class="mood-neon"></div>
           </div>
         </div>
         <div class="cereal-copy">
@@ -336,6 +375,155 @@
       </div>
     </section>
 
+    <!-- ═══ PRICING ═══ -->
+    <section class="section pricing-section">
+      <span class="section-eyebrow">Pricing</span>
+      <h2>Choose Your <em>Plan</em></h2>
+      <p class="section-sub">
+        Start free and upgrade as you grow. All plans include access to our design blueprint extraction engine.
+      </p>
+      <div class="pricing-grid">
+        <!-- Free Tier -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <div class="pricing-name">Free</div>
+            <div class="pricing-price">
+              <span class="price-amount">$0</span>
+              <span class="price-period">/month</span>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">3 Blueprints per month</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Limited swipes per round (1 skip)</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Basic design spec export</span>
+            </div>
+            <div class="feature-item disabled">
+              <span class="feature-icon">✗</span>
+              <span class="feature-text">Unlimited blueprints</span>
+            </div>
+            <div class="feature-item disabled">
+              <span class="feature-icon">✗</span>
+              <span class="feature-text">Advanced variant generation</span>
+            </div>
+            <div class="feature-item disabled">
+              <span class="feature-icon">✗</span>
+              <span class="feature-text">Priority support</span>
+            </div>
+            <div class="feature-item disabled">
+              <span class="feature-icon">✗</span>
+              <span class="feature-text">Team collaboration</span>
+            </div>
+            <div class="feature-item disabled">
+              <span class="feature-icon">✗</span>
+              <span class="feature-text">Version history</span>
+            </div>
+          </div>
+          <a href="signup.html" class="pricing-cta">Get Started</a>
+        </div>
+
+        <!-- Individual Tier -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-header">
+            <div class="pricing-name">Individual</div>
+            <div class="pricing-price">
+              <span class="price-amount">$29</span>
+              <span class="price-period">/month</span>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Unlimited blueprints</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">More swipes per round (3 skips)</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Advanced design spec export</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Advanced variant generation</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Priority support</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Version history</span>
+            </div>
+            <div class="feature-item disabled">
+              <span class="feature-icon">✗</span>
+              <span class="feature-text">Team collaboration</span>
+            </div>
+            <div class="feature-item disabled">
+              <span class="feature-icon">✗</span>
+              <span class="feature-text">Shared workspaces</span>
+            </div>
+          </div>
+          <a href="signup.html" class="pricing-cta primary">Upgrade to Individual</a>
+        </div>
+
+        <!-- Team Tier -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <div class="pricing-name">Team</div>
+            <div class="pricing-price">
+              <span class="price-amount">$99</span>
+              <span class="price-period">/month</span>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Everything in Individual</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Unlimited team members</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Team collaboration tools</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Shared workspaces</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Centralized billing</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Admin controls</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Dedicated support</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">Custom integrations</span>
+            </div>
+          </div>
+          <a href="signup.html" class="pricing-cta">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ FINAL CTA ═══ -->
     <section class="final-cta" id="cta">
       <img class="final-blimp" src="assets/images/MARTYBLIMP.png" alt="Blimp" />
@@ -347,7 +535,10 @@
     <!-- ═══ FOOTER ═══ -->
     <footer>
       <div class="foot-logo"><img src="assets/images/schwep.png" alt="schwep" /></div>
-      <div class="foot-copy">© 2024 Schwep. All rights reserved.</div>
+      <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+        <a href="docs.html" class="nav-link">Docs</a>
+        <span class="foot-copy">© 2024 Schwep. All rights reserved.</span>
+      </div>
     </footer>
 
     <script>

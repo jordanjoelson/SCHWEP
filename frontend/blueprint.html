@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schwep — Your Design Blueprint</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700;900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/shared.css" />
+    <style>
+      body {
+        background: #f2efe9;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        color: var(--black);
+      }
+
+      .bp-shell {
+        max-width: 1200px;
+        margin: 32px auto 64px;
+        padding: 32px 32px 48px;
+      }
+
+      .bp-top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .bp-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--white);
+        border: var(--border);
+        border-radius: 0;
+        cursor: pointer;
+        color: var(--black);
+        font-family: 'DM Mono', monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 9px 16px;
+        text-decoration: none;
+        box-shadow: 4px 4px 0 var(--black);
+        transition: transform 0.15s, box-shadow 0.15s;
+      }
+
+      .bp-back:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: var(--shadow);
+      }
+
+      .bp-title-block span {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--orange);
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .bp-title-block h1 {
+        font-family: 'Instrument Serif', serif;
+        font-size: clamp(2.3rem, 3.4vw, 3.1rem);
+        letter-spacing: -1px;
+        margin: 0;
+      }
+
+      .bp-title-block h1 em {
+        font-style: italic;
+        color: var(--orange);
+      }
+
+      .bp-sub {
+        max-width: 520px;
+        font-size: 0.98rem;
+        line-height: 1.7;
+        color: #444;
+        margin-top: 10px;
+      }
+
+      .bp-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+        gap: 32px;
+        margin-top: 40px;
+      }
+
+      .bp-summary-card {
+        background: var(--white);
+        border: var(--border);
+        border-radius: 14px;
+        padding: 22px 22px 20px;
+        box-shadow: 0 8px 32px rgba(13, 13, 13, 0.08);
+      }
+
+      .bp-summary-heading {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(13, 13, 13, 0.65);
+        margin-bottom: 14px;
+      }
+
+      .bp-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .bp-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #f5f3ec;
+        border: 1px solid rgba(13, 13, 13, 0.12);
+        font-size: 0.72rem;
+        font-weight: 500;
+      }
+
+      .bp-tag-k {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: rgba(13, 13, 13, 0.6);
+      }
+
+      .bp-tag-v {
+        font-weight: 700;
+        color: var(--orange);
+      }
+
+      .bp-json-label {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(13, 13, 13, 0.55);
+        margin-top: 8px;
+        margin-bottom: 6px;
+      }
+
+      .bp-json {
+        background: #f5f5f0;
+        border-radius: 10px;
+        border: 1px solid rgba(13, 13, 13, 0.12);
+        padding: 12px 14px;
+        font-family: 'DM Mono', monospace;
+        font-size: 0.7rem;
+        line-height: 1.7;
+        max-height: 220px;
+        overflow: auto;
+      }
+
+      .bp-json code {
+        white-space: pre;
+      }
+
+      .bp-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .bp-btn {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 9px 14px;
+        border-radius: 999px;
+        border: 1.5px solid rgba(13, 13, 13, 0.8);
+        background: var(--white);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .bp-btn.primary {
+        background: var(--orange);
+        color: white;
+        border-color: var(--orange);
+        box-shadow: 0 4px 12px rgba(255, 77, 0, 0.25);
+      }
+
+      .bp-btn.secondary {
+        background: #f5f3ec;
+      }
+
+      .bp-preview-shell {
+        background: var(--white);
+        border-radius: 18px;
+        border: 1.5px solid rgba(13, 13, 13, 0.14);
+        box-shadow: 0 12px 40px rgba(13, 13, 13, 0.12);
+        padding: 18px 18px 20px;
+      }
+
+      .bp-preview-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+
+      .bp-preview-meta {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.58rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: rgba(13, 13, 13, 0.6);
+      }
+
+      .bp-preview-name {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        letter-spacing: -0.4px;
+      }
+
+      .bp-preview-tagline {
+        font-size: 0.78rem;
+        color: #777;
+        margin-top: 4px;
+      }
+
+      .bp-preview-frame {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(13, 13, 13, 0.16);
+        background: #f5f3ec;
+      }
+
+      .bp-preview-canvas {
+        border-radius: 14px;
+        border: 1px solid rgba(13, 13, 13, 0.12);
+        overflow: hidden;
+        background: #f7f6f2;
+        min-height: 320px;
+      }
+
+      /* Layout previews */
+      .layout-bento-page {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        gap: 10px;
+        padding: 18px 18px 16px;
+      }
+
+      .layout-bento-page-hero {
+        grid-row: span 2;
+        background: linear-gradient(135deg, rgba(255, 77, 0, 0.12), rgba(255, 144, 232, 0.09));
+        border-radius: var(--bp-radius);
+        border: 1.5px solid rgba(13, 13, 13, 0.12);
+        padding: 18px 18px 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .layout-bento-page-hero-title {
+        width: 75%;
+        height: 18px;
+        background: rgba(13, 13, 13, 0.4);
+        border-radius: 4px;
+        margin-bottom: 8px;
+      }
+
+      .layout-bento-page-hero-sub {
+        width: 55%;
+        height: 11px;
+        background: rgba(13, 13, 13, 0.24);
+        border-radius: 3px;
+        margin-bottom: 6px;
+      }
+
+      .layout-bento-page-hero-cta {
+        width: 36%;
+        height: 14px;
+        background: rgba(255, 77, 0, 0.7);
+        border-radius: 999px;
+      }
+
+      .layout-bento-page-card,
+      .layout-bento-page-metric,
+      .layout-bento-page-list {
+        background: rgba(255, 255, 255, 0.87);
+        border-radius: var(--bp-radius);
+        border: 1px solid rgba(13, 13, 13, 0.12);
+        padding: 11px 11px 10px;
+      }
+
+      .layout-bento-page-card-title {
+        width: 68%;
+        height: 11px;
+        background: rgba(13, 13, 13, 0.35);
+        border-radius: 3px;
+        margin-bottom: 6px;
+      }
+
+      .layout-bento-page-card-line {
+        width: 92%;
+        height: 7px;
+        background: rgba(13, 13, 13, 0.16);
+        border-radius: 2px;
+      }
+
+      .layout-bento-page-metric-value {
+        width: 40%;
+        height: 16px;
+        background: rgba(13, 13, 13, 0.4);
+        border-radius: 4px;
+        margin-bottom: 6px;
+      }
+
+      .layout-bento-page-metric-bar {
+        width: 100%;
+        height: 7px;
+        background: rgba(255, 77, 0, 0.4);
+        border-radius: 999px;
+      }
+
+      .layout-bento-page-list-row {
+        width: 100%;
+        height: 7px;
+        background: rgba(13, 13, 13, 0.16);
+        border-radius: 2px;
+        margin-bottom: 4px;
+      }
+
+      .layout-bento-page-list-row:last-child {
+        width: 72%;
+      }
+
+      .layout-split-page {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        gap: 10px;
+        padding: 18px 18px 16px;
+      }
+
+      .layout-split-page-main {
+        background: linear-gradient(135deg, rgba(13, 13, 13, 0.94), rgba(13, 13, 13, 0.78));
+        border-radius: var(--bp-radius);
+        padding: 18px 18px 16px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 7px;
+      }
+
+      .layout-split-page-main-title {
+        width: 80%;
+        height: 18px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 4px;
+      }
+
+      .layout-split-page-main-sub {
+        width: 60%;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 3px;
+      }
+
+      .layout-split-page-main-cta {
+        width: 32%;
+        height: 14px;
+        background: var(--orange);
+        border-radius: 999px;
+      }
+
+      .layout-split-page-side {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .layout-split-page-panel {
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: var(--bp-radius);
+        border: 1px solid rgba(13, 13, 13, 0.14);
+        padding: 10px 11px 9px;
+      }
+
+      .layout-swiss-page {
+        padding: 18px 18px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .layout-swiss-row {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 8px;
+      }
+
+      .layout-swiss-bar {
+        height: 9px;
+        background: rgba(13, 13, 13, 0.36);
+        border-radius: 2px;
+      }
+
+      .layout-swiss-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+        margin-top: 4px;
+      }
+
+      .layout-swiss-tile {
+        height: 34px;
+        background: rgba(13, 13, 13, 0.06);
+        border-radius: 3px;
+      }
+
+      .layout-editorial-page {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+        gap: 10px;
+        padding: 18px 18px 16px;
+      }
+
+      .layout-editorial-cover {
+        background: rgba(13, 13, 13, 0.96);
+        border-radius: var(--bp-radius);
+        padding: 18px 18px 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 6px;
+      }
+
+      .layout-editorial-cover-label {
+        width: 36%;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 3px;
+      }
+
+      .layout-editorial-cover-headline {
+        width: 84%;
+        height: 18px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 4px;
+      }
+
+      .layout-editorial-body {
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: var(--bp-radius);
+        border: 1px solid rgba(13, 13, 13, 0.14);
+        padding: 12px 12px 10px;
+      }
+
+      .layout-editorial-line {
+        width: 100%;
+        height: 7px;
+        background: rgba(13, 13, 13, 0.16);
+        border-radius: 2px;
+        margin-bottom: 4px;
+      }
+
+      @media (max-width: 960px) {
+        .bp-shell {
+          padding: 24px 20px 40px;
+        }
+        .bp-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav-component"></div>
+
+    <main class="bp-shell">
+      <div class="bp-top-row">
+        <a href="index.html" class="bp-back">← Start over</a>
+        <div class="bp-title-block">
+          <span>Design blueprint</span>
+          <h1>Your <em>vision</em> translated</h1>
+          <p class="bp-sub">
+            Based on the rounds you completed, Schwep generated a structural blueprint plus a full layout
+            example. This is a working page composition, not just a single component—ready to hand to design or
+            dev.
+          </p>
+        </div>
+      </div>
+
+      <section class="bp-layout">
+        <aside class="bp-summary-card">
+          <div class="bp-summary-heading">Summary</div>
+          <div class="bp-tags" id="bp-tags"></div>
+
+          <div class="bp-json-label">Blueprint object</div>
+          <div class="bp-json">
+            <code id="bp-json-code">{}</code>
+          </div>
+
+          <div class="bp-actions">
+            <button type="button" class="bp-btn primary" id="bp-copy-btn">Copy JSON</button>
+            <a href="archive.html" class="bp-btn secondary">Open archive</a>
+          </div>
+        </aside>
+
+        <section class="bp-preview-shell">
+          <header class="bp-preview-header">
+            <div>
+              <div class="bp-preview-meta">Example layout</div>
+              <div class="bp-preview-name" id="bp-preview-name">Blueprint preview</div>
+              <p class="bp-preview-tagline">
+                Layout, shape, tone, and finish combined into a single frame.
+              </p>
+            </div>
+            <div class="bp-preview-frame" id="bp-preview-frame-label">Frame: –</div>
+          </header>
+
+          <div class="bp-preview-canvas" id="bp-preview-canvas"></div>
+        </section>
+      </section>
+    </main>
+
+    <div id="footer-component"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/blueprint.js"></script>
+  </body>
+</html>
+
